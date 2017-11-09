@@ -1,0 +1,54 @@
+<div class="container body" padding>
+
+
+    <div [hidden]="!visuales">
+        <button class="btn btn-info" (click)="jugar()" style="width:100%">Jugar</button>
+    </div>
+
+    <div [hidden]="visuales" padding style="text-align:center">
+        <h1> Elija </h1>
+        <button class="btn opciones" (click)="eleccion(1)" [disabled]="" name="piedra"> <img class="img-thumbnail" src="../assets/imagenes/piedra.jpg" alt="Avatar" style="width:300px;height:300px"></button>
+        <button class="btn opciones" (click)="eleccion(2)" [disabled]="" name="papel"> <img class="img-thumbnail" src="../assets/imagenes/papel.jpg" alt="Avatar" style="width:300px;height:300px"></button>
+        <button class="btn opciones" (click)="eleccion(3)" [disabled]="" name="tijera"> <img class="img-thumbnail" src="../assets/imagenes/tijera.jpg" alt="Avatar" style="width:300px;height:300px"></button>
+    </div>
+    <br>
+
+    <div [hidden]="habemus ">
+
+
+
+        <div class="container" padding style="text-align:center">
+
+            <div style="width:95%" [hidden]="resultado != 'gano'" class="alert alert-success animated shake">
+                Usted <strong>{{resultado}}!</strong>
+            </div>
+            <div style="width:95%" [hidden]="resultado != 'empato'" class="alert alert-warning animated shake">
+                Usted <strong>{{resultado}}!</strong>
+            </div>
+            <div style="width:95%" [hidden]="resultado != 'perdio'" class="alert alert-danger animated shake">
+                Usted <strong>{{resultado}}!</strong>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Su eleccion:
+                        <br>
+                        <br>
+                        <img src="{{user}}" alt="" style="width:300px;height:300px">
+                    </h1>
+                </div>
+                <div class="col-md-6">
+                    <h1> La maquina elijio :</h1>
+                    <br>
+                    <img src="{{maquina}}" alt="" style="width:300px;height:300px">
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

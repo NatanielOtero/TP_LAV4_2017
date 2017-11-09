@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -5,8 +6,9 @@ import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component'
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
@@ -40,7 +42,11 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
+import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import {MatToolbarModule} from '@angular/material';
+import {MatMenuModule} from '@angular/material';
+import { JuegoPropioComponent } from './componentes/juego-propio/juego-propio.component';
+import {MatDialogModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -61,12 +67,20 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
     MenuCardComponent,
     CabeceraComponent,
     QuienSoyComponent,
-    AnagramaComponent
+    AnagramaComponent,
+    PiedraPapelTijeraComponent,
+    JuegoPropioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
+    RuteandoModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatDialogModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo

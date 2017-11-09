@@ -25,30 +25,69 @@
           <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
         </ul>
     </div>
-  </nav-->
-  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+  </nav
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
                                   
           </button>
-          <a class="navbar-brand" routerLink="/Principal">Inicio</a>
+            <a class="navbar-brand" routerLink="/Principal">Inicio</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a routerLink="/Juegos">Menú de Juegos</a></li>
                 <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-                <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
-                <li><a  (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
-                <li><a  (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-                  <li><a href="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-                </ul>
+                <li><a (click)="Juego('Agilidad')">Agilidad</a></li>
+                <li><a (click)="Juego('Piedra')">Piedra Papel Tijeras</a></li>
+                <li><a (click)="Juego('Anagrama')">Anagrama</a></li>
+                <li><a (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
+                <li><a (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
+                <li><a href="/Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+            </ul>
         </div>
-      </div>
-    </nav>
-      
-   
+    </div>
+</nav>-->
+
+<mat-toolbar color="primary">
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>Menu</mat-icon>
+              </button>
+    <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="Juego('Principal')">
+                    Principal
+                    </button>
+        <button mat-menu-item (click)="Juego('Adivina')">
+                    Adivina
+                    </button>
+        <button mat-menu-item (click)="Juego('Agilidad')">
+                Agilidad
+                </button>
+        <button mat-menu-item (click)="Juego('Piedra')">
+                 Piedra Papel Tijeras
+                </button>
+        <button mat-menu-item (click)="Juego('Anagrama')">
+                 Anagrama
+                </button>
+        <button mat-menu-item (click)="Juego('Propio')">
+                    Blackjack
+                       </button>
+        <button mat-menu-item (click)="Juego('AdivinaMasListado')">
+                 Adivina + Listado       
+                 </button>
+        <button mat-menu-item (click)="Juego('AgilidadaMasListado')">
+                       Agilidad + Listado     
+                </button>
+    </mat-menu>
+    <span class="example-spacer"></span>
+    <ul class="nav navbar-nav navbar-right" style="font-size:14px; ">
+        <li><button mat-button><span class="glyphicon glyphicon-user"></span> Mis Datos</button></li>
+        <li><button mat-button><span class="glyphicon glyphicon-log-out"></span> Salir</button></li>
+    </ul>
+</mat-toolbar>

@@ -1,3 +1,6 @@
+import { JuegoPropioComponent } from '../componentes/juego-propio/juego-propio.component';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // importo del module principal
@@ -17,8 +20,12 @@ import { JuegosComponent } from '../componentes/juegos/juegos.component';
 import { RegistroComponent } from '../componentes/registro/registro.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
-import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
+import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
+import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component'
 // declaro donde quiero que se dirija
+
+
+
 const MiRuteo = [
 {path: '' , component: PrincipalComponent},
 {path: 'Login' , component: LoginComponent},
@@ -31,8 +38,12 @@ component: JuegosComponent ,
 children:
      [{path: '' , component: MenuCardComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
+     {path: 'Principal' , component: MenuCardComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
+      {path: 'Piedra' , component: PiedraPapelTijeraComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
+      {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'Propio' , component: JuegoPropioComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
 },
 {path: '**' , component: ErrorComponent},

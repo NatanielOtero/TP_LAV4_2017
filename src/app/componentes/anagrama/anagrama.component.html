@@ -1,3 +1,29 @@
-<p>
-  anagrama works!
-</p>
+<div class="container animated fadeIn body">
+    <h3>Anagrama: {{palabraDesordenada}}</h3>
+
+    <input class="form-control" (ngModelChange)="validar()" type="text" [(ngModel)]="palabraIngresada">
+
+    <div padding style="text-align:center">
+
+
+        <div [hidden]="!mostrar">
+            <button class="btn btn-primary" (click)="generarPalabra()">Generar palabra</button>
+        </div>
+
+        <div [hidden]="mostrar">
+            <button class="btn btn-succes" [disabled]="boton" (click)="jugar()">Verificar palabra</button>
+        </div>
+
+        <div style="width:95%" [hidden]="resultado != '¡Adivinaste la palabra!'" class="alert alert-success animated shake">
+            <strong>{{resultado}}!</strong>
+        </div>
+        <div style="width:95%" [hidden]="resultado != '¡Le erraste, la próxima será!'" class="alert alert-danger animated shake">
+            <strong>{{resultado}}!</strong>
+        </div>
+        <div style="width:95%" [hidden]="resultado != 'Ingresa una respuesta'" class="alert alert-warning animated shake">
+            <strong>{{resultado}}!</strong>
+        </div>
+
+    </div>
+
+</div>
